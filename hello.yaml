@@ -4,11 +4,11 @@
        - name: hello module
          hello: 
          register: result
-       
-       - name: Test that version number can be incremented
-         version_change: 
-         version_name: "Initial"
-         version_no:  1.1.1 
-         unchanged_value: "Demo"
+       - debug: var=result
+       - name: change version
+         version_change:  
+           version_no: 1.1.1
+           version_name: "initial version"
+           unchanged_value: "not updated"
          register: result
-       - debug: var=result  
+       - debug: var=result
