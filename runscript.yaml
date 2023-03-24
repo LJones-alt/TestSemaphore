@@ -1,0 +1,13 @@
+- name: Run a script using an executable in a system path
+  hosts: raspberrypies
+  tasks:
+     - name: install dependancies
+       command: python3 -m pip install -r /home/laura/repos/requirements.txt
+       register: main_raw_output
+     - name: run script 
+       command: python3 /home/laura/repos/main.py
+      
+     - name: print output
+       ansible.builtin.debug:
+         var: main_raw_output
+         verbosity: 3    

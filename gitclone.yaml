@@ -1,0 +1,14 @@
+#####################
+## Does a git clone##
+#####################
+
+
+---
+ - hosts: all
+   tasks:
+   - name: Clone a github repository
+     git:
+       repo: https://github.com/LJones-alt/BasicFlaskServerDemo.git
+       dest: /home/laura/repos/
+       clone: yes
+       update: yes

@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   tasks:
+   - name: Git Pull
+     git:
+       repo: https://github.com/LJones-alt/BasicFlaskServerDemo.git
+       dest: /home/laura/repos/
+       update: yes
