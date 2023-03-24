@@ -8,7 +8,7 @@
     - name: Facts
       ansible.builtin.debug: 
          msg: System {{hostname}} at {{ ansible_default_ipv4.gateway }}
-        when: ansible_default_ipv4.gateway is defined
+        
 
     - name: print all known facts
       ansible.builtin.debug:
