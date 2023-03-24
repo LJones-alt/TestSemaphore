@@ -1,6 +1,6 @@
 ---
-- name: Test Play
-   hosts: all
+
+- hosts: all
    tasks:
 #     - name: Ping hosts
 #       ansible.builtin.ping:
