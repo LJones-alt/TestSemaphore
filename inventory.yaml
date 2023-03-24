@@ -1,10 +1,11 @@
-raspberrypies:
+
   hosts:
     laurapi:
       ansible_host: 10.255.8.34
       ansible_user: laura
       ansible_become_user: yes
       app_version : 1.0
+    
   vars:
     ansible_user: laura_test
     app_version: dev_1_1_1

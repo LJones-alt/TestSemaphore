@@ -1,5 +1,5 @@
 - name: hello Play
-  hosts: raspberrypies
+
   tasks: 
        - name: hello module
          hello: 
