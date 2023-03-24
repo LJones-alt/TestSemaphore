@@ -1,33 +1,6 @@
----
-
-- hosts: all
-   tasks:
-#     - name: Ping hosts
-#       ansible.builtin.ping:
-
-     - name: 
-       ansible.builtin.debug:
-        msg: Hello, this is a message
-
-     - name: show host info
-       ansible.builtin.debug:
-         msg: System {{ inventory_hostname }} at {{ ansible_default_ipv4.gateway }}
-       when: ansible_default_ipv4.gateway is defined 
-
-     - name: print all known facts
-       ansible.builtin.debug:
-         msg: hostvars[inventory_hostname]
-         verbosity: 4
-       when: ansible_defualt_ipv4.gateway is defined
-
-     - name: print system uptime
-       ansible.builtin.debug: 
-         msg: System username is  {{ ansible_user }}
-
-     - name: show my variables
-       ansible.builtin.debug: 
-         msg: Using app version {{ app_version }} 
-
-     - name: run a shell command
-       shell: ping -c1 www.google.com
-       register: result
+- name: Hello
+  hosts: all
+  tasks: 
+    - name: Message
+      debug: 
+        msg: "Hello" 
