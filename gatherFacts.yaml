@@ -1,6 +1,5 @@
 - name: Test network info playbook 
-  connection: ansible.netcommon.network_cli
-  gather_facts: false
+
   hosts: all
   tasks:
 
