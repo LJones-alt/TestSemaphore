@@ -1,0 +1,14 @@
+- name: pingPong
+
+  tasks: 
+       - name: hello module
+         hello: 
+         register: result
+       - debug: var=result
+       - name: change version
+         version_change:  
+           version_no: 1.1.1
+           version_name: "initial version"
+           unchanged_value: "not updated"
+         register: result
+       - debug: var=result

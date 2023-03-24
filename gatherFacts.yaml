@@ -1,12 +1,17 @@
-- name: Test network info playbook 
-
-  hosts: all
-  tasks:
-
+---
+ - hosts: all
+   tasks:
     - name: Get config for network
       vyos.vyos.vyos_facts:
         gather_subset: all
 
-    - name: Display the config
+    - name: Get all dirs
+    find:
+      paths: parent_dir
+      file_type: directory
+    register: result_of_find
+
+    - name: Print all the dirs
       debug:
-        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+        msg: "{{ item.path }}"
+      with_items: "{{ result_of_find.files }}"
